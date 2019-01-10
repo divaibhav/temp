@@ -1,0 +1,80 @@
+package com.project1.mystring;
+
+import com.project1.interfaces.StringBase;
+
+public class MyString implements StringBase {
+    public static void main(String[] args) {
+        new MyString().showStructure("hello");
+        System.out.println(new MyString().lessThan("Amar","Shyam"));
+        System.out.println(new MyString().gtrThan("Amar","Shyam"));
+    }
+    /*
+showStructure method is
+used to print input
+String str in th below
+pattern
+0 1 2 3 4
+H e l l o
+The characters in a
+String can be manipulated
+one at a time with the
+use of the charAt(int
+index) method.*/
+
+    /*
+    showStructure method is used to print input String str in th below pattern
+    0     1    2   3   4   5   6   7   8   9   10  11
+    H     e    l   l   o       W   o   r   l   d   !
+     */
+    @Override
+    public void showStructure(String str) {
+        for(int i=0;i<str.length();i++){
+            System.out.print(i+"\t");
+        }
+        System.out.println();
+        for(int i=0;i<str.length();i++){
+            char ch=str.charAt(i);
+            System.out.print(ch+"\t");
+            //System.out.print(str.charAt(i)+"\t");
+        }
+
+    }
+
+    @Override
+    public boolean lessThan(String leftstring, String rightstring) {
+        boolean response=false;
+
+        int result=leftstring.compareTo(rightstring);
+        if(result<0){
+            response=true;
+        }
+        return response;
+    }
+
+    @Override
+    public boolean gtrThan(String leftstring, String rightstring) {
+        boolean response=false;
+
+        int result=leftstring.compareTo(rightstring);
+        if(result>0){
+            response=true;
+        }
+        return response;
+
+    }
+
+    @Override
+    public String findSubstring(String teststr1, int start, int count) {
+        return null;
+    }
+
+    @Override
+    public void firstLtrWord(String inpuntstring) {
+
+    }
+
+    @Override
+    public int strCharCount(String inputstring, char ch) {
+        return 0;
+    }
+}
